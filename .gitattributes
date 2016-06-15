@@ -15,3 +15,10 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+API/node_modules
+API/icon.png
+API/tes.js
+API/teste.js
+API/utils/config.js
+API/rnval
