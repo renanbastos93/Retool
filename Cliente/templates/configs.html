@@ -1,0 +1,21 @@
+<ion-view view-title="Configurações">
+<ion-content>
+<div class="list">
+	<form ng-submit="salvarConfigs(mudar)" method="POST">
+		<label class="item item-input item-stacked-label">
+			<span class="input-label">Indicadores</span>
+			<input type="number" step="1" ng-model="mudar.qtdIndicatores" min="0" required>
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label">Notificações</span>
+			<input type="number" step="1"  min="0" ng-model="mudar.notification" required>
+		</label>
+		<input type="submit" class="button button-block button-positive" value="Atualizar">
+	</form>
+</div>
+</ion-content>
+</ion-view>
+<!--
+placeholder="Quantidade de Indicadores" 
+placeholder="Quantas vezes ao dia..."
+-->

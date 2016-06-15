@@ -1,0 +1,40 @@
+<ion-view view-title="Timeline">
+<ion-content class="time">
+<ion-refresher
+pulling-text="Solte para atualizar"
+spinner="bubbles"
+on-refresh="doRefresh()" >
+</ion-refresher>
+<div class="list" ng-init="refresh()" >
+	<ul class="timeline" ng-repeat="(key, value) in timeline | orderBy: '-data' | limitTo:qtdInd ">
+		<li>
+			<div ng-if="value.tipoGrupo == 'loja'" class="timeline-badge success">
+				<i class="ion-arrow-graph-up-right loja"></i>
+			</div>
+			<div ng-if="value.tipoGrupo == 'categoria'" class="timeline-badge produto success">
+				<i class="ion-arrow-graph-up-right produto"></i>
+			</div>
+			<div ng-if="value.tipoGrupo == 'produto'" class="timeline-badge categoria success">
+				<i class="ion-arrow-graph-up-right categoria"></i>
+			</div>
+			
+			<div class="timeline-panel" ng-click="changeClass(key)">
+				<div class="timeline-heading">
+					<h5 class="timeline-title">{{value.titulo}}</h5>
+					<div class="timeline-body">
+						<p id="{{key}}" name="card" class="{{classe}}">
+							{{value.corpo}}
+						</p>	
+						<i class="icon ion-clock data"></i> 
+						{{value.postado | date:'dd MMMM yyyy'}}
+					</small>				
+				</div>
+			</div>
+			<div class="art"></div>
+		</div>
+
+	</li>
+</ul>
+</div>
+</ion-content>
+</ion-view>
